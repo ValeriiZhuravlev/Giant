@@ -1,0 +1,182 @@
+.pricing {
+  padding-top: 88px;
+  padding-bottom: 110px;
+  text-align: center;
+  
+  &__subtitle {
+    max-width: 660px;
+    margin: 0 auto;
+  }
+  
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-top: 68px;
+  }
+  
+  &__item {
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+}
+  
+.option {
+  background: #f7fafc;
+  width: 25%;
+  max-width: 265px;
+  text-align: center;
+  
+  &__name {
+    font-size: 20px;
+    margin: 0;
+    padding: 15px 0;
+  }
+  
+  &__price {
+    background: #fff;
+    height: 120px;
+    position: relative;
+  
+    &:before,
+    &:after {
+      content: '';
+      width: 50%;
+      height: 40px;
+      position: absolute;
+      bottom: -2px;
+      border: 30px solid transparent;
+    }
+  
+    &:after {
+      left: -2px;
+      border-right: 105px solid #f7fafc; 
+      border-bottom: 10px solid #f7fafc; 
+      transform: rotateY(180deg);
+    }
+  
+    &:before {
+      right: -2px;
+      border-right: 105px solid #f7fafc;
+      border-bottom: 10px solid #f7fafc; 
+    }
+  
+  &-value {
+    display: inline-block;
+    font-size: 50px;
+    @include font-Dosis;
+    padding-top: 25px;
+    font-weight: 500;
+  
+    &:before {
+      content: '$';
+      display: inline-block;
+      vertical-align: super;
+      font-size: 20px;
+    }
+  
+      &:after {
+        content: '/m';
+        display: inline-block;
+        vertical-align: baseline;
+        font-size: 18px;
+      }
+    }
+  }
+  
+  &__list {
+    margin: 30px auto 35px; 
+    padding: 0;
+    width: 75%;
+    list-style: none;
+  }
+  
+  &__item {
+    margin-bottom: 10px;
+    border-bottom: 1px dashed #eeeeee;
+  }
+  
+  &__free-trial {
+    color: #cecfd0;
+    text-transform: capitalize;
+  }
+  
+  &__button {
+    display: block;
+    margin: 5px auto 40px;
+    font-weight: 500;
+    width: 52%;
+    padding: 9px;
+    border: 1px solid #eeeeee;
+    border-radius: 45px;
+    background: #fff;
+    text-decoration: none;
+    color: #333333;
+  }
+  
+  &_disabled {
+    .option__name {
+      color: #d0d2d4;
+    }
+  }
+  
+  &_active {
+    box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.1);
+    .option {
+        &__price {
+          background: linear-gradient( 90deg, rgb(253,113,44) 0%, rgb(242,23,128) 100%);
+        }
+  
+        &__price-value {
+          color: #fff;
+        }
+  
+        &__button {
+          background: linear-gradient( 90deg, rgb(253,113,44) 0%, rgb(242,23,128) 100%);
+          color: #fff;
+          border: 3px solid #e1e1e1  
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 895px) {
+    .pricing {
+      &__list {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      
+      &__item {
+          margin-right: 30px;
+          margin-left: 30px;
+      }
+
+    .option {
+      width: 50%;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .pricing {
+    &__list {
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    
+  .option {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+}
+}
+  

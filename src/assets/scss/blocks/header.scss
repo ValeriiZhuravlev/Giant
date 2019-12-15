@@ -1,0 +1,139 @@
+.header {
+  background: url("../img/Phons.png"), linear-gradient(90deg, rgb(253, 113, 44) 0%, rgb(242, 23, 128) 100%);
+  background-repeat: no-repeat;
+  background-position: right 150px, center;
+  align-items: center;
+  padding-bottom: 220px;
+  
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+  }
+  
+  &__banner {
+    margin-top: 132px;
+  }
+}
+  
+.nav {
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 470px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  &__item {
+    border-radius: 20px;
+    
+    &_active {
+      background: #fff;
+      .nav__link {
+        color: #000;
+        font-weight: 500;
+      }
+    }
+  }
+  
+  &__link {
+    line-height: normal;
+    display: inline-block;
+    padding: 10px 30px;
+    color: #fff;
+    text-decoration: none;
+  }
+}
+  
+.banner {
+  width: 45%;
+  color: #fff;
+  
+  &__title {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+  
+  &__btn {
+    display: inline-block;
+    padding: 8px 40px;
+    border-radius: 20px;
+    color: #000;
+    font-weight: 500;
+    background: #fff;
+    box-shadow: 0px 1px 0px 6px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+  }
+  
+  &__list {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 34px;
+  }
+}
+  
+.list {
+  list-style: none;
+  font-weight: 400;
+  
+  &__item {
+    padding-left: 34px;
+    margin-bottom: 11px;
+    position: relative;
+  
+    &:before {
+      @include font-FontAwesome;
+      content: '\f058';
+      position: absolute;
+      left: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  .header {
+    padding-right: 15px;
+    background-position: 260px 150px, center;
+  } 
+}
+
+@media screen and (max-width: 1024px) {
+  .header {
+    flex-wrap: wrap;
+    &__nav {
+      padding-left: 20px;
+      padding-right: 20px;
+      flex-wrap: wrap;
+    }
+
+    &__banner {
+      width: 55%;
+      padding-left: 20px;
+    }
+  } 
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    &__banner {
+      width: 75%;
+    }
+  } 
+}
+
+@media screen and (max-width: 520px) {
+  .header {
+    &__banner {
+      width: 100%;
+    }
+  } 
+
+  .nav__list {
+    flex-wrap: wrap;
+  }
+}
+
