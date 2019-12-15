@@ -138,6 +138,7 @@
 @media screen and (max-width: 560px) {
   .reviews {
     &__list {
+      left: 0;
       max-width: 350px;
     }
 
